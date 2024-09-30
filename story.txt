@@ -10,7 +10,8 @@ hello world
 chapter 2
 
 chapter 3
-
+Strawberry cheesecake is my favorite ice cream flavor.
+Or maybe mint chocolate chip.
 chapter 4
 
 chapter 5:
