@@ -7,6 +7,10 @@ package frc.robot;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import frc.robot.shapes.Circle;
+import frc.robot.shapes.Rectangle;
+import frc.robot.shapes.Square;
+
 // import edu.wpi.first.wpilibj.RobotBase;
 
 /**
@@ -46,9 +50,37 @@ public final class Main {
     do {
       print(a);
     } while (doLoop);
+
+    Circle trevor = new Circle(5);
+    Circle geofery = new Circle(7);
+
+    Rectangle james = new Rectangle(5 , 10);
+    Rectangle thomas = new Rectangle(7, 9);
+
+    Square clarence = new Square(15);
+    Square don = new Square(5);
+
+    LOG.error("main(): trevor.area(): {}", trevor.area());
+    LOG.error("main(): geofery.area(): {}", geofery.area());
+    LOG.error("main(): trevor.perimiter(): {}", trevor.perimiter());
+    LOG.error("main(): geofery.perimiter(): {}", geofery.perimiter());
+
+    LOG.error("main(): james.area(): {}", james.area());
+    LOG.error("main(): thomas.area(): {}", thomas.area());
+    LOG.error("main(): james.perimiter(): {}", james.perimiter());
+    LOG.error("main(): thomas.perimiter(): {}", thomas.perimiter());
+
+    LOG.error("main(): clarence.area(): {}", clarence.area());
+    LOG.error("main(): don.area(): {}", don.area());
+    LOG.error("main(): clarence.perimiter(): {}", clarence.perimiter());
+    LOG.error("main(): don.perimiter(): {}", don.perimiter());
   }
 
   private static void print(int count) {
-    LOG.warn("Hello World :) {}", count);
+    LOG.trace("print(): Hello World :) {}", count);
+    LOG.debug("print(): Hello World :) {}", count);
+    LOG.info("print(): Hello World :) {}", count);
+    LOG.warn("print(): Hello World :) {}", count);
+    LOG.error("print(): Hello World :) {}", count);
   }
 }
