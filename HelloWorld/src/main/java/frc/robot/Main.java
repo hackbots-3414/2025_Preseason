@@ -22,6 +22,7 @@ import frc.robot.shapes.Square;
  */
 public final class Main {
   private static final Logger LOG = LoggerFactory.getLogger(Main.class);
+
   private Main() {
   }
 
@@ -33,16 +34,16 @@ public final class Main {
    */
   public static void main(String... args) {
     // RobotBase.startRobot(Robot::new);
-    for(int i = 0; i < 50; i ++) {
+    for (int i = 0; i < 50; i++) {
       print(i);
     }
     System.out.println("///////////////////////////");
     boolean doLoop = true;
     int a = 0;
-    while(doLoop) {
+    while (doLoop) {
       print(a);
       a += 2;
-      if(a > 100) {
+      if (a > 100) {
         doLoop = false;
       }
     }
@@ -54,7 +55,7 @@ public final class Main {
     Circle trevor = new Circle(5);
     Circle geofery = new Circle(7);
 
-    Rectangle james = new Rectangle(5 , 10);
+    Rectangle james = new Rectangle(5, 10);
     Rectangle thomas = new Rectangle(7, 9);
 
     Square clarence = new Square(15);
