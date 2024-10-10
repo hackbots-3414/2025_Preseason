@@ -46,6 +46,9 @@ public final class Main {
   }
 
   private static void print(int count) {
+    LOG.trace("Hello World {}", count);
+    LOG.debug("Hello World {}", count);
+    LOG.warn("Hello World {}", count);
     LOG.error("Hello World {}", count);
   }
 
