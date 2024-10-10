@@ -37,20 +37,16 @@ public final class Main {
     int a = 0;
     while (doLoop) {
       print(a);
-      a = a + 5;
+      a += 2;
       if (a > 100) {
         doLoop = false;
       }
     }
-    System.out.println("--------------------");
-    do {
-      print(a);
-    } while (doLoop);
     // skibidiRizzTester();
   }
 
   private static void print(int count) {
-    LOG.trace("Hello World {}", count);
+    LOG.error("Hello World {}", count);
   }
 
   private static void skibidiRizzTester() {
