@@ -15,11 +15,12 @@ public class Rectangle implements Shape {
 
     public Rectangle(double length, double width) {
         this.length = length;
-        this.width = width;
+        this.width = width; 
     }
 
     public double getLength() {
-        return length;
+        double length = 500;
+        return length;  // this.something is used so you can bring back a specific variable
     }
 
     public void setLength(double length) {
@@ -43,6 +44,6 @@ public class Rectangle implements Shape {
 
     @Override
     public double perimiter() {
-        return (2 * length) + (2 * width);
+        return (2 * length) + (2 * width); 
     }
 }

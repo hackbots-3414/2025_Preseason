@@ -26,11 +26,11 @@ public class Circle implements Shape {
     @Override
     public double area() {
         return Math.PI * Math.pow(radius, 2);
-    }
+    } 
 
     @Override
     public double perimiter() {
         return Math.PI * 2 * radius;
     }
-    
+
 }
