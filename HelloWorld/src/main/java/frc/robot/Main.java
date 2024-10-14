@@ -7,6 +7,10 @@ package frc.robot;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import frc.robot.shapes.Circle;
+import frc.robot.shapes.Rectangle;
+import frc.robot.shapes.Square;
+
 // import edu.wpi.first.wpilibj.RobotBase;
 
 /**
@@ -46,8 +50,22 @@ public final class Main {
     do {
       print(a);
     } while (doLoop);
-  }
+  
 
+  Circle trevor = new Circle();
+  Circle skibidi = new Circle();
+  trevor.setRadius(2);
+  skibidi.setRadius(10000);
+  Square clarence = new Square(7);
+  
+  Rectangle danny = new Rectangle(10, 5);
+  LOG.error("main(): danny.getArea(): {}", danny.area());
+  LOG.error("main(): danny.getPerimiter(): {}", danny.perimiter());
+  LOG.error("main(): trevor.getArea(): {}", trevor.area());
+  LOG.error("main(): skibidi.getArea(): {}", skibidi.area());
+  LOG.error("main(): clarence.getArea(): {}", clarence.area());
+  LOG.error("main(): clarence.getPerimiter(): {}", clarence.perimiter());
+  }
   private static void print(int count) {
     LOG.warn("Hello World :) {}", count);
   }
