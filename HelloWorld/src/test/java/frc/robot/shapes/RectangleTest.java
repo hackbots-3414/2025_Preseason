@@ -12,7 +12,7 @@ public class RectangleTest {
     @Test 
     public void testArea(){
         Rectangle rectangle = new Rectangle(4, 3);
-        assertEquals(12.1, rectangle.getArea(), "Expected and actual should match");
+        assertEquals( 12.1, rectangle.area(), "Expected and actual should match");
     }
 
 }
