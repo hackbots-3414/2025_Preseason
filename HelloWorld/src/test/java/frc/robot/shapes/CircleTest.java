@@ -5,7 +5,4 @@
 package frc.robot.shapes;
 
 /** Add your docs here. */
-public interface Shape {
-    double perimiter();
-    double area();
-}
+public class CircleTest {}

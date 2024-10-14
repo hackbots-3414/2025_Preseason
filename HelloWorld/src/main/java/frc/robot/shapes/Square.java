@@ -28,3 +28,4 @@ public class Square extends Rectangle {
         super.setLength(width);
     }
 }
+//this. is only for the class but super. is for all inherited
