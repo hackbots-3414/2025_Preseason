@@ -22,7 +22,7 @@ public class Rectangle implements Shape {
         return length;
     }
 
-    public void setLength(double length) {
+    public void setLength(double length) { 
         this.length = length;
     }
 
