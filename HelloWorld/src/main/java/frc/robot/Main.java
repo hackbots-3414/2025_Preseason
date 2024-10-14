@@ -24,27 +24,32 @@ public final class Main {
   for(int i = 0; i < 50; i ++) { 
  print(i);
   }
-  private static void print(int count) { 
-    System.out.println(Hello World" " + count);
-  System.err.println("hello world");
-System.out.println("//////////////////")
+  System.out.printIn(x:"///////////////////////");
+  boolean doLoop = true;
+  int a = 0;
+  while (doLoop) (
+    print(a);
+    a += 2;
+    if(a > 100) (
+      doLoop = false;
+  )
+)
+System.out.println("//////////////////");
+do (
+  print(a);
+) while (doLoop);
 
-boolean doLoop = true;
-int a = 0;
-while(doloop)
-print(a);
-a+=2;
-if(a > 100){ 
-  doLoop=false;
-}
-  }
-  do{
-print(a);
-  }while(doLoop):
-  }
+Circle trevor = new Circle();
+Circle geofery = new Circle ();
+trevor.setRadius(radius:5);
+geofery.setRadius(radius:7);
+
+LOG.error(msg:"main(): trevor.getArea(): ()", trevor.area());
+)
+
 
  private static void print(int count) { 
-    System.out.println(Hello World" " + count);
+    System.out.println("Hello World " + count);
   System.err.println("hello world"); 
 }
  https://docs.wpilib.org/en/stable/docs/software/advanced-gradlerio/external-libraries.html: 
