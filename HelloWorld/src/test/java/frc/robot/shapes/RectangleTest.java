@@ -4,13 +4,15 @@
 
 package frc.robot.shapes;
 
-import org.junuit.jupitar.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEqauls;
 /** Add your docs here. */
 public class RectangleTest {
-    test 
+    @test 
 public void TestArea() { 
 Rectangle rectangle = new Rectangle(4,3);
-asserteqauls(expected:12.0, rectangle.getArea(), message: "expected and actul"
+asserteqauls(:12.0, rectangle.area(), message; "Expected and actul should match");
 }
-}
+@test 
+public void testPerimeter()[ 
+   Rectangle rectangle = new Rectangle(4,3);
+   assertEquals(14.0, rectangle.perimiter(), "Expected and actul should match");
+]
