@@ -19,6 +19,7 @@ public class Rectangle implements Shape {
     }
 
     public double getLength() {
+        double length = 500;
         return length;
     }
 
@@ -38,7 +39,7 @@ public class Rectangle implements Shape {
 
     @Override
     public double area() {
-        return length * width;
+        return getLength() * width;
     }
 
     @Override
