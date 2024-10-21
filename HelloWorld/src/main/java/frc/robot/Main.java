@@ -7,6 +7,8 @@ package frc.robot;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import frc.robot.shapes.Circle;
+
 // import edu.wpi.first.wpilibj.RobotBase;
 
 /**
@@ -18,6 +20,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class Main {
   private static final Logger LOG = LoggerFactory.getLogger(Main.class);
+
   private Main() {
   }
 
@@ -29,16 +32,16 @@ public final class Main {
    */
   public static void main(String... args) {
     // RobotBase.startRobot(Robot::new);
-    for(int i = 0; i < 50; i ++) {
+    for (int i = 0; i < 50; i++) {
       print(i);
     }
     System.out.println("///////////////////////////");
     boolean doLoop = true;
     int a = 0;
-    while(doLoop) {
+    while (doLoop) {
       print(a);
       a += 2;
-      if(a > 100) {
+      if (a > 100) {
         doLoop = false;
       }
     }
@@ -46,9 +49,23 @@ public final class Main {
     do {
       print(a);
     } while (doLoop);
+
+    Circle trevor = new Circle();
+    Circle geofery = new Circle();
+    trevor.setRadius(5);
+    geofery.setRadius(7);
+
+    LOG.error("main(): trevor.getArea(): ()", trevor.area());
+    LOG.error("main(): geofery.getArea(): ()", geofery.area());
+
+
   }
 
   private static void print(int count) {
+    LOG.trace("print(): Hello World :) {}", count);
+    LOG.debug("Hello World :) {}", count);
+    LOG.info("Hello World :) {}", count);
     LOG.warn("Hello World :) {}", count);
+    LOG.error("Hello World :) {}", count);
   }
 }
