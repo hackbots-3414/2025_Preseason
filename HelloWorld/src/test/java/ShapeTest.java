@@ -23,7 +23,7 @@ public static final int MAX_SHAPE_ARRAY_lENGTH = 50
              break; 
              case 2:
              shapes[i] = new Circle(); 
-             ((Cicrle) shapes [i].setRadious( radious 4) 
+             ((Cicrle) shapes [i].setRadious( radious 4) )
              break; 
              defoult 
              shapes [i]= new Sqaure (); 
