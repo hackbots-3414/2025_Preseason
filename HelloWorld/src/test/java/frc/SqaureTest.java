@@ -11,13 +11,13 @@ import frc.robot.shapes.Square;
 
 /** Add your docs here. */
 public class SqaureTest {
-    @test 
+    @Test 
     public void testArea(){ 
         Square sqaure = new square(3);
         assertEquals( 9.0, square.area(), "Expected and actul should match");
     }
     
-@test 
+@Test 
 public void testPerimeter()[
    Square sqaure = new Square(3);
    assertEquals(12.0, sqaure.perimiter(), "Expected and actul should match");

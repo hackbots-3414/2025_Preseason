@@ -9,14 +9,17 @@ import org.junit.jupiter.api.Test;
 /** Add your docs here. */
 public class CircleTest {
     @Test 
-    public void circleArea(){ 
-        Circle circleArea = new Circle(8);
-        assertEquals(Math.PI * Math.pow(8,2),circleArea(), "Expected should match actul")
+    public void circleArea() { 
+
+      Circle circleTest = new Circle();
+       Circle circleArea= new Circle(8);
+        assertEquals(Math.PI * Math.pow(8,2),circleArea(), "Expected should match actul");
     }
+
     @Test
-    public void circlePerimeter(){ 
+    public void circlePerimeter() { 
       Circle circleArea = new Circle();
-      assertEquals(Math.PI * 2 * 8, circlePerimeter(), "Expected should match actul");
+      assertEquals(Math.PI * 2 * 8, Math.PI, circlePerimeter(), "Expected should match actul");
     }
 }
 

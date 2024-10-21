@@ -5,14 +5,15 @@
 package frc.robot.shapes;
 
 /** Add your docs here. */
-public class RectangleTest {
-    @test 
+public class RectangleTest { 
+  @Test 
 public void TestArea() { 
 Rectangle rectangle = new Rectangle(4,3);
 asserteqauls(:12.0, rectangle.area(), message; "Expected and actul should match");
 }
-@test 
+@Test 
 public void testPerimeter()[ 
    Rectangle rectangle = new Rectangle(4,3);
-   assertEquals(14.0, rectangle.perimiter(), "Expected and actul should match");
+   assertEquals(14.0, rectangle.perimiter(), "Expected and actul should match"); 
 ]
+}
