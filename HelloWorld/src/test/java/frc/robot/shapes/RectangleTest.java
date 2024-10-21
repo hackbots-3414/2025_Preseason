@@ -4,14 +4,26 @@
 
 package frc.robot.shapes;
 
-import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
 
 /** Add your docs here. */
 public class RectangleTest {
+    
     @Test
-    public void testArea() {
-        rectangle rectangle = new rectangle(4, 3);
-        asserrtequals(12.1, rectangle.getArea(), "Expected and Actual should Match");
+    public void testArea(){
+        Rectangle rectangleTest = new Rectangle();
+        rectangleTest.setLength(3);
+        rectangleTest.setWidth(10);
+        assertEquals(30, rectangleTest.area());
+    }
+
+    @Test
+    public void testPerimiter(){
+        Rectangle rectangleTest = new Rectangle();
+        rectangleTest.setLength(3);
+        rectangleTest.setWidth(10);
+        assertEquals(26, rectangleTest.perimiter());
     }
 }
