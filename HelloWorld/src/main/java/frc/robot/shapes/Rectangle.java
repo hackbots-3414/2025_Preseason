@@ -7,8 +7,8 @@ package frc.robot.shapes;
 /** Add your docs here. */
 public class Rectangle implements Shape {
 
-    private double length = 0;
-    private double width = 0;
+    private double length;
+    private double width;
 
     public Rectangle() {
     }
