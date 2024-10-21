@@ -16,8 +16,8 @@ public class Rectangle implements Shape {
     public void setLength(double length) {
         this.length = length;
     }
-    public void setWidth(double length) {
-        this.length = length;
+    public void setWidth(double width) {
+        this.width = width;
     }
    @Override public double area() {
         return length * width;
