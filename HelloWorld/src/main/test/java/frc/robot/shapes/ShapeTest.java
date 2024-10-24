@@ -12,22 +12,20 @@ public class ShapeTest {
     public static final int MAX_SHAPE_ARRAY_LENGTH = 50;
 
     @Test
-    public void testShapes() [
+    public void testShapes() {
+         Shape{} shapes = new Shape[MAX_SHAPE_ARRAY_LENGTH];
 
-        Shapes shapes = new Shape(MAX_SHAPE_ARRAY_LENGTH);
-
-        for (int i = 0; i < Shapes.length; i++) (
-            switch (i) (
+        for (int i = 0; i < Shapes.length; i++) {}
+            switch (i) {}
                 case 1:
-                     shapes{i} = new Rectangle;
-                     shapes {i}.setLength(3)
+                     shapes[i] = new Rectangle();
+                    ((Rectangle)shapes[1]).setLength(3);
+                    ((Rectangle)shapes[1]).setWidth(5);
                      break;
-                default:
-                    break;
 
-            )
-        )
+            }
+        }  
 
-        ]
+    }
 
 }
