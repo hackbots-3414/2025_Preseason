@@ -4,27 +4,34 @@
 
 package SquareTest;
 
+import frc.robot.shapes.Square;
+
 /** Add your docs here. */
 public class SquareTest {
+
     @Test 
     public void testArea() {
-        Square SquareTest = new Square ();
-        squareTest.setLength(3);
-        assertEquals(9.0, SquareTest.area(), "Expected and actual");
+        Square SquareTest = new Square();
+        squareTest.setLength(10);
+        assertEquals(100, SquareTest.area());
     }
+
     @Test
-    public void testPerimeter(){
+    public void testPerimeter() {
         Square square = new Square();
-        squareTest.setWidth(3)
-        assertEquals(expected:12.0, squareTest.perimeter())
+        squareTest.setWidth(10);
+        assertEquals(40, SquareTest.perimeter());
+    }
     
     @Test
-    public void testParameters() ;
-        Square testmeasures = new Square();
-        testmeasures.setLength(5);
-        testmeasures.setWidth(6);
-        assertEquals(expected:5, testMeasures.getLength())
-        
+    public void testMeasurement() {
+        Square SquareTest = new Square();
+        SquareTest.setLength(10);
+        SquareTest.setWidth(2);
+        assertEquals(2, SquareTest.getlength());
+        SquareTest.setLength(11);
+        assertEquals(11, SquareTest.getWidth());
     }
+        
 
 }
