@@ -32,7 +32,6 @@ public class ShapeTest {
         }
         for (int i = 0; i < shapesArray.length; i++) {
             assertTrue(shapesArray[i].area() > 0);
-
         }
     }
 }
