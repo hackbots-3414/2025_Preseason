@@ -4,5 +4,18 @@
 
 package frc.robot.shapes;
 
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 /** Add your docs here. */
-public class CircleTest {}
+public class CircleTest {
+    @Test
+    public void circleArea(){
+        Circle circleArea = new Circle(8);
+        assertEquals(Math.PI * Math.pow(8, 2), circleArea.area(), "Expected should match actual");
+    }
+    @Test
+    public void circlePerimeter(){
+        
+    }
+}

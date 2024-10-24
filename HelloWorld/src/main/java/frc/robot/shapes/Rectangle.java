@@ -19,7 +19,6 @@ public class Rectangle implements Shape {
     }
 
     public double getLength() {
-        double length = 500;
         return length;
     }
 

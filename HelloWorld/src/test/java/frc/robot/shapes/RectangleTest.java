@@ -10,8 +10,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /** Add your docs here. */
 public class RectangleTest {
     @Test
-    public void testArea() {
+    public void TestArea() {
         Rectangle rectangle = new Rectangle(4,3);
-        assertEquals(12.1, rectangle.getArea(), "Expected and actual area should match");
+        assertEquals(12.0, rectangle.area(), "Expected and actual area should match");
+    }
+    @Test
+    public void TestPerimeter(){
+      Rectangle rectangle = new Rectangle(4,3);
+      assertEquals(14.0, rectangle.perimiter(), "Expected and actual area should match");
     }
 }
