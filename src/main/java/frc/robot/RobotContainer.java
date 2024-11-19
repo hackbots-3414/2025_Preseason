@@ -13,6 +13,7 @@ import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.math.geometry.Translation2d;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
+import edu.wpi.first.wpilibj2.command.button.CommandPS5Controller;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import frc.robot.commands.ManualDrive;
 import frc.robot.generated.TunerConstants;
@@ -23,7 +24,7 @@ public class RobotContainer {
   private double MaxAngularRate = 1.5 * Math.PI; // 3/4 of a rotation per second max angular velocity
 
   /* Setting up bindings for necessary control of the swerve drive platform */
-  private final CommandXboxController joystick = new CommandXboxController(0); // My joystick
+  private final CommandPS5Controller joystick = new CommandPS5Controller(0); // My joystick
   private final CommandSwerveDrivetrain drivetrain = TunerConstants.DriveTrain; // My drivetrain
 
   private final SwerveRequest.FieldCentric drive = new SwerveRequest.FieldCentric()
@@ -36,14 +37,14 @@ public class RobotContainer {
   private final Telemetry logger = new Telemetry(MaxSpeed);
 
   private void configureBindings() {
-     //drivetrain.setDefaultCommand( // Drivetrain will execute this command periodically
-       //drivetrain.applyRequest(() -> drive.withVelocityX(-joystick.getLeftY() * MaxSpeed) // Drive forward with
-         //                                                                                 // negative Y (forward)
-            // .withVelocityY(-joystick.getLeftX() * MaxSpeed) // Drive left with negative X (left)
-             //.withRotationalRate(-joystick.getRightX() * MaxAngularRate) // Drive counterclockwise with negative X (left)
-       //  ));
-  drivetrain.setDefaultCommand(new ManualDrive(drivetrain, joystick));
-
+     drivetrain.setDefaultCommand( // Drivetrain will execute this command periodically
+       drivetrain.applyRequest(() -> drive.withVelocityX(-joystick.getLeftY() * MaxSpeed) // Drive forward with
+                                                                                         // negative Y (forward)
+             .withVelocityY(-joystick.getLeftX() * MaxSpeed) // Drive left with negative X (left)
+             .withRotationalRate(-joystick.getRightX() * MaxAngularRate) // Drive counterclockwise with negative X (left)
+         ));
+  //drivetrain.setDefaultCommand(new ManualDrive(drivetrain, joystick));
+    joystick.circle().whileTrue(new ManualDrive(drivetrain, joystick));
    // joystick.a().whileTrue(drivetrain.applyRequest(() -> brake));
     //joystick.b().whileTrue(drivetrain
        // .applyRequest(() -> point.withModuleDirection(new Rotation2d(-joystick.getLeftY(), -joystick.getLeftX()))));
