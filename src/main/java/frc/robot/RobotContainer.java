@@ -16,8 +16,10 @@ import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.button.CommandPS5Controller;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import frc.robot.commands.ManualDrive;
+import frc.robot.commands.MoveWhenPathNotClear;
 import frc.robot.generated.TunerConstants;
 import frc.robot.subsystems.CommandSwerveDrivetrain;
+import frc.robot.subsystems.LazerRangeFinder;
 
 public class RobotContainer {
   private double MaxSpeed = TunerConstants.kSpeedAt12VoltsMps; // kSpeedAt12VoltsMps desired top speed
@@ -26,6 +28,7 @@ public class RobotContainer {
   /* Setting up bindings for necessary control of the swerve drive platform */
   private final CommandPS5Controller joystick = new CommandPS5Controller(0); // My joystick
   private final CommandSwerveDrivetrain drivetrain = TunerConstants.DriveTrain; // My drivetrain
+  private final LazerRangeFinder lazerRangeFinder = new LazerRangeFinder();
 
   private final SwerveRequest.FieldCentric drive = new SwerveRequest.FieldCentric()
       .withDeadband(MaxSpeed * 0.1).withRotationalDeadband(MaxAngularRate * 0.1) // Add a 10% deadband
@@ -33,6 +36,7 @@ public class RobotContainer {
                                                                // driving in open loop
   private final SwerveRequest.SwerveDriveBrake brake = new SwerveRequest.SwerveDriveBrake();
   private final SwerveRequest.PointWheelsAt point = new SwerveRequest.PointWheelsAt();
+  private final MoveWhenPathNotClear moveWhenPathNotClear = new MoveWhenPathNotClear(drivetrain, lazerRangeFinder);
 
   private final Telemetry logger = new Telemetry(MaxSpeed);
 
@@ -45,6 +49,7 @@ public class RobotContainer {
          ));
   //drivetrain.setDefaultCommand(new ManualDrive(drivetrain, joystick));
     joystick.L2().whileTrue(new ManualDrive(drivetrain, joystick));
+    joystick.L1().whileTrue(moveWhenPathNotClear);
    // joystick.a().whileTrue(drivetrain.applyRequest(() -> brake));
     //joystick.b().whileTrue(drivetrain
        // .applyRequest(() -> point.withModuleDirection(new Rotation2d(-joystick.getLeftY(), -joystick.getLeftX()))));
