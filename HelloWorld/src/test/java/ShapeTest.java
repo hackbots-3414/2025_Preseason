@@ -7,19 +7,19 @@ package ShapeTest;
 /** Add your docs here. */
 public class ShapeTest { 
 
-public static final int MAX_SHAPE_ARRAY_lENGTH = 50
+public static final int MAX_SHAPE_ARRAY_lENGTH = 50;
 
     @Test 
     public void testShapes() { 
 
-        Shape [] shapes = new Shape () {  MAX_SHAPE_ARRAY_lENGTH };
+        Shape[] shapes = new Shape[  MAX_SHAPE_ARRAY_lENGTH ];
 
         for (int i=0; i < shapes.length;i++){ 
             switch (i){ 
             case 1 : 
-              shapes[i] = new Rectangle 
-             ((Rectangle) shapes{i}.setLength(9);)
-             ((Rectangle) shapes{i}.setwidh(5);)
+              shapes[i] = new Rectangle ();
+             ((Rectangle) shapes{i}.setLength(9));
+             ((Rectangle) shapes{i}.setwidh(5));
              break; 
              case 2:
              shapes[i] = new Circle(); 
