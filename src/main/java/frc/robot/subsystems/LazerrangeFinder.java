@@ -10,14 +10,11 @@ import au.grapplerobotics.LaserCan.Measurement;
 import au.grapplerobotics.LaserCan.RangingMode;
 import au.grapplerobotics.LaserCan.RegionOfInterest;
 import au.grapplerobotics.LaserCan.TimingBudget;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class LazerRangeFinder extends SubsystemBase {
   private LaserCan lCan;
-
-  private double distance = -1;
-
+  
   /** Creates a new LazerRangeFinder. */
   public LazerRangeFinder() {
     lCan = new LaserCan(2);
@@ -26,7 +23,7 @@ public class LazerRangeFinder extends SubsystemBase {
       lCan.setRangingMode(RangingMode.SHORT);
       lCan.setRegionOfInterest(new RegionOfInterest(8, 8, 16, 16));
       lCan.setTimingBudget(TimingBudget.TIMING_BUDGET_20MS);
-    } catch (ConfigurationFailedException configException) {
+    } catch(ConfigurationFailedException configException){
       configException.printStackTrace();
     }
 
@@ -37,14 +34,8 @@ public class LazerRangeFinder extends SubsystemBase {
     // This method will be called once per scheduler run
     Measurement lCanMeasurment = lCan.getMeasurement();
     if (lCanMeasurment != null && lCanMeasurment.status == LaserCan.LASERCAN_STATUS_VALID_MEASUREMENT) {
-      distance = lCanMeasurment.distance_mm;
-    } else {
-      distance = -1;
-    }
-    SmartDashboard.putNumber("LazerCan Disance", distance);
-  }
 
-  public double getDistance() {
-    return distance;
+    }
   }
 }
+
