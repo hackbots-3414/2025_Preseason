@@ -10,7 +10,9 @@ import frc.robot.subsystems.LazerRangeFinder;
 /** Add your docs here. */
 public class MoveWhenDontSee {
     private CommandSwerveDrivetrain drivetrain;
-public MoveWhenDontSee(CommandSwerveDrivetrain drivetrain, CommandLazerRangeFinder lazerRangeFinder) {
+    pivate LazerRangeFinder lazerRangeFinder;
+
+public MoveWhenDontSee(CommandSwerveDrivetrain drivetrain, LazerRangeFinder lazerRangeFinder) {
     this.drivetrain = drivetrain;
     this.lazerRangeFinder = lazerRangeFinder;
 }
