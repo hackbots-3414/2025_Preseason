@@ -11,6 +11,7 @@ import frc.robot.subsystems.LazerRangeFinder;
 public class MoveWhenPathNotClear extends Command {
   private CommandSwerveDrivetrain drivetrain;
   private LazerRangeFinder lazer;
+
   /** Creates a new MoveWhenPathNotClear. */
   public MoveWhenPathNotClear(CommandSwerveDrivetrain commandswervedrivetrain, LazerRangeFinder lazerrangefinder) {
     // Use addRequirements() here to declare subsystem dependencies.
@@ -20,23 +21,27 @@ public class MoveWhenPathNotClear extends Command {
 
   // Called when the command is initially scheduled.
   @Override
-  public void initialize() {}
+  public void initialize() {
+  }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
     if (lazer.getDistance() > 0) {
-      drivetrain.drive(3, 0, 0);
+      drivetrain.drive(0, 0, 3);
     }
   }
 
   // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) {}
+  public void end(boolean interrupted) {
+    drivetrain.drive(0, 0, 0);
+  }
 
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    return false;
+    // stop when button is released, or don't see anything
+    return lazer.getDistance() < 0;
   }
 }
