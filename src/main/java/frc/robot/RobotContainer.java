@@ -15,6 +15,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.button.CommandPS5Controller;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
+import frc.robot.commands.DrivePIDUntilClose;
 import frc.robot.commands.ManualDrive;
 import frc.robot.commands.MoveWhenPathNotClear;
 import frc.robot.generated.TunerConstants;
@@ -50,6 +51,7 @@ public class RobotContainer {
   //drivetrain.setDefaultCommand(new ManualDrive(drivetrain, joystick));
     joystick.L2().whileTrue(new ManualDrive(drivetrain, joystick));
     joystick.L1().whileTrue(moveWhenPathNotClear);
+    joystick.R1().whileTrue(new DrivePIDUntilClose(drivetrain, lazerRangeFinder));
    // joystick.a().whileTrue(drivetrain.applyRequest(() -> brake));
     //joystick.b().whileTrue(drivetrain
        // .applyRequest(() -> point.withModuleDirection(new Rotation2d(-joystick.getLeftY(), -joystick.getLeftX()))));

@@ -5,6 +5,7 @@
 package frc.robot.commands;
 
 import edu.wpi.first.math.controller.PIDController;
+import edu.wpi.first.units.Distance;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.PIDCommand;
 import frc.robot.subsystems.CommandSwerveDrivetrain;
@@ -20,13 +21,14 @@ public class DrivePIDUntilClose extends PIDCommand {
   public DrivePIDUntilClose( CommandSwerveDrivetrain drivetrain, LazerRangeFinder rangefinder) {
     super(
         // The controller that the command will use
-        new PIDController(.25, 0, 0),
+        new PIDController(.06, 0, 0),
         // This should return the measurement
         () -> {
           double distance = rangefinder.getDistance();
           if (distance < 0) {
             distance = 5000;
           }
+          SmartDashboard.putNumber("PID Distance", distance);
           return distance;
         },
         // This should return the setpoint (can also be a constant)
@@ -35,12 +37,13 @@ public class DrivePIDUntilClose extends PIDCommand {
         output -> {
           // Use the output here
           drivetrain.drive(0, 0.5*output, 0);
+          SmartDashboard.putNumber("PID Output", output);
         });
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(drivetrain);
     // Configure additional PID options by calling `getController` here.
     getController().enableContinuousInput(0, 5000);
-    SmartDashboard.putData("PID Controler",getController());
+    SmartDashboard.putData("PID Controller",getController());
     this.drivetrain = drivetrain;
     this.rangefinder = rangefinder;
   }

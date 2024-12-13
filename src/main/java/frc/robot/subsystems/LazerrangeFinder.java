@@ -23,7 +23,7 @@ public class LazerRangeFinder extends SubsystemBase {
         lCan = new LaserCan(2);
 
         try {
-            lCan.setRangingMode(RangingMode.SHORT);
+            lCan.setRangingMode(RangingMode.LONUd);
             lCan.setRegionOfInterest(new RegionOfInterest(8, 8, 16, 16));
             lCan.setTimingBudget(TimingBudget.TIMING_BUDGET_20MS);
         } catch (ConfigurationFailedException configException) {
